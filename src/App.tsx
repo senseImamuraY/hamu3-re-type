@@ -1,10 +1,23 @@
 import "./styles.css";
+import Counter from "./Counter";
 
-export default function App() {
-  return (
-    <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
-    </div>
-  );
+interface AppProps {
+  message?: string;
 }
+
+const App: React.FunctionComponent<AppProps> = ({ message }) => {
+  // const { message } = props;
+  return (
+    <>
+      <div>
+        <Counter />
+      </div>
+    </>
+  );
+};
+
+App.defaultProps = {
+  message: "not a type, it`s a message"
+};
+
+export default App;
